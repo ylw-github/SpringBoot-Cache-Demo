@@ -12,12 +12,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CacheController {
 
+
+    @RequestMapping("/testHotSwap")
+    public String testHotSwap() {
+        return "testHotSwap1";
+    }
+
     @Autowired
     private CacheManager cacheManager;
 
     @Autowired
     private UserMapper userMapper;
-
     @RequestMapping("/addCache")
     public String addCache() {
         User user = userMapper.findByName("Dumas");
